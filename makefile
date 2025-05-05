@@ -5,6 +5,7 @@
 
 #changing platform dependant stuff, do not change this
 # Linux (default)
+LD_DEBUG=all make
 LDFLAGS = -lGL -lGLU -lglut
 CXXFLAGS= -w -g -Wall -std=c++11
 CXX=g++
@@ -25,7 +26,7 @@ else
 endif
 
 #change the 't1' name to the name you want to call your application
-PROGRAM_NAME= ParticleSystem
+PROGRAM_NAME= Chess
 
 #run target to compile and build, and then launch the executable
 run: $(PROGRAM_NAME)
@@ -36,7 +37,7 @@ run: $(PROGRAM_NAME)
 #ie. boilerplateClass.o and yourFile.o
 #make will automatically know that the objectfile needs to be compiled
 #form a cpp source file and find it itself :)
-$(PROGRAM_NAME): PPM.o Chess.o #ParticleSyste.o
+$(PROGRAM_NAME): Chess.o #PPM.o Chess.o #ParticleSyste.o
 	$(CXX) -o $@ $^ $(CFLAGS) $(LDFLAGS)
 
 

@@ -28,7 +28,7 @@ float camPos[] = {100, 50, 100};
 float Look[] = {0,0,0};
 /* LIGHTING */
 
-bool nolights=true;
+bool nolights=false;
 
 float light_pos[4] = {5,5,5,1};
 float amb[4] = {0.5,0.5,0.5,1};
@@ -157,7 +157,7 @@ bool loadOBJ(
 	fclose(file);
 	return true;
 }
-bool res = loadOBJ("Pawn.obj", coinvertices, coinuvs, coinnormals,true);
+bool res = loadOBJ("OBJs/Pawn.obj", coinvertices, coinuvs, coinnormals,true);
 void drawgl(float scalefactor) {
 
     int count=0;
@@ -260,7 +260,7 @@ void setPerspectiveProjection() {
 void display(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-///	displayOrthographic();
+	///displayOrthographic();
 	float origin[3] = {0,0,0};
 	setPerspectiveProjection();
 	glMatrixMode(GL_MODELVIEW);
@@ -289,7 +289,7 @@ void display(void)
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, specMat2);
 	glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, 27);
 
-	//drawgl(1.0);
+	drawgl(1.0);
 
 
 
